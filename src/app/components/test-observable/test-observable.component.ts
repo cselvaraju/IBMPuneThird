@@ -15,13 +15,21 @@ export class TestObservableComponent implements OnInit {
 
   constructor(private observableService: ObservableService) { }
 
-  ngOnInit() {
-    this.observable = this.observableService.test();
-    this.observable.subscribe(this.performAction);
-      }
+  // ngOnInit() {
+  //   this.observable = this.observableService.test();
+  //   this.observable.subscribe(this.performAction);
+  // }
 
-  performAction(value) {
-    console.log(value);
-    this.myData = value;
+  // performAction(value) {
+  //   console.log(value);
+  //   this.myData = value;
+  // }
+ 
+ 
+  ngOnInit() {
+    this.observableService.test().subscribe((value) => {
+      console.log(value);
+      this.myData = value;
+    });
   }
 }

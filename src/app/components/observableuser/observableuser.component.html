@@ -1,8 +1,11 @@
 <div>
   <h3>List of Observable Users</h3>
-  <ul>
+  <ul *ngIf="userList">
     <li *ngFor="let user of userList; index as ndx">
       User - {{ndx + 1}}: Name: {{user.name}} City: {{user.city}}
     </li>
   </ul>
+  <div *ngIf="!userList">
+    <h5>Loading data...... Please wait.....</h5>
+  </div>
 </div>

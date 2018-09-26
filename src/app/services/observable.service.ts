@@ -32,4 +32,37 @@ export class ObservableService {
 
         return this.data;
     }
+
+    ///////////////////////
+    //   LAMBDA EXAMPLES
+
+    // 1. Anonymous Function
+    // f = function() {
+    //     // some code
+    // };
+
+    // 2. Lambda example
+    // (x, y) => {
+    //     a = x + 5;
+    //     b = y -10;
+
+    //     return a + b;
+    // };
+
+    //3. Lambda - parameterless
+    // () => {
+    //     //Some Code
+    // }
+
+    //4. Lambda - single parameter
+    // myparam => {
+    //     //Some code
+    // }
+
+    //5. Lambda - only one expression statement and it returns
+
+    // param => expression
+
+
 }
+
