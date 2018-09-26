@@ -3,6 +3,7 @@
   <div>{{ message }}</div>
   <app-child 
     [childCount]="parentCount"
-    (countChanged)="onCountChanged($event)">
+    (countChanged)="onCountChanged($event)"
+    (actorCreated)="onActorCreated($event)">
   </app-child>
 </div>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
 
+import { Actor } from '../../models/Actor';
+
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -14,11 +16,15 @@ export class ChildComponent implements OnInit {
   // childCount in the child component's tag (used by
   // the parent)
 
+  @Output() actorCreated = new EventEmitter<Actor>();
   @Output() countChanged = new EventEmitter<number>();
+
+  actor: Actor;
 
   constructor() { }
 
   ngOnInit() {
+    this.actor = { name: '', city: ''};
   }
 
   incrementCount() {
@@ -29,5 +35,9 @@ export class ChildComponent implements OnInit {
   decrementCount() {
     --this.childCount;
     this.countChanged.emit(this.childCount);
+  }
+
+  createActor() {
+    this.actorCreated.emit(this.actor);
   }
 }
